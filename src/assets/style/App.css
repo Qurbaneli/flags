@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap');
+
+
+body{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color:#333;
+}
+
+.container{
+    width:1300px;
+}
+
+#header{
+    background:#fff;
+    display: flex;
+    justify-content: center;
+    height: 90px;
+    border-bottom: 2px solid #f1f1f1;
+}
+#header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .container .dark-mode-box{
+    display: flex;
+    align-items: center;
+}
+
+
+#header .container h1{
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.row{
+    padding:50px 0px;
+
+    display: flex;
+    justify-content: center;
+    background-color: #FAFAFA;
+}
+.row .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.row .container .search-box{
+   position: relative;
+}
+
+.row .container .search-box input{
+    width:420px;
+    height: 48px;
+    padding-left:50px;
+    border-radius: 5px;
+   border:1px solid #eee;
+   outline: none;
+   font-family: 'Noto Sans JP', sans-serif;
+
+}
+
+.row .container .filter-box select{
+    width:220px;
+    height: 38px;
+    padding-left:10px;
+    border-radius: 5px;
+   border:1px solid #eee;
+   outline: none;
+   font-family: 'Noto Sans JP', sans-serif;
+}
+
+.row .container .filter-box select:focus{
+    outline:1px solid rgba(0, 0, 0, 0.098);
+}
+
+.row .container .filter-box select option{
+    font-size: 18px;
+}
+
+#countries{
+    background-color: #FAFAFA;
+}
+
+#countries .container{
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#countries .container .country-item{
+    width:300px;
+    height:370px;
+    border:1px solid #ccc;
+    margin:20px 0px;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+#countries .container .country-item:hover{
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    transform: scale(1.05);
+}
+
+#countries .container .country-item .country-img{
+   height: 190px;
+   overflow: hidden;
+   object-fit: contain;
+}
+
+#countries .container .country-item .country-img img{
+    width:100%;
+    height: auto;
+ }
+
+ #countries .container .country-item .country-detail{
+    padding:10px;
+ }
+
+ #countries .container .country-item .country-detail h3{
+    margin:0px;
+ }
+
+ #countries .container .country-item .country-detail p{
+    font-size: 15px;
+    color:#555;
+ }
+

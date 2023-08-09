@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap');
+
+#country-detail{
+    display: flex;
+    justify-content: center;
+    background-color: #fafafa;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+.back-box
+{
+    margin:50px 0px;
+}
+
+.back-box .back
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    width:100px;
+    padding:7px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.back-box .back:hover
+{
+    background-color: #eee;
+}
+
+#country-detail .country-detail-box {
+    display: flex;
+    justify-content:space-between;
+}
+
+#country-detail .country-detail-box .flag-img{
+    width:40%;
+}
+
+#country-detail .country-detail-box .flag-img img{
+    width:100%;
+}
+
+#country-detail .country-detail-box .country-detail-desc-box{
+    width:60%;
+    padding-left: 100px;
+}
+
+#country-detail .country-detail-box .country-detail-desc-box h2{
+    margin:0px;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+#country-detail .country-detail-box .country-detail-desc-box .country-detail-desc {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#country-detail .country-detail-box .country-detail-desc-box .country-detail-desc .left-desc{
+    padding-right:50px;
+}
+
+#country-detail .country-detail-box .country-detail-desc-box .country-detail-desc .country-detail-desc-item{
+   padding:7px 0px;
+   font-size: 15px;
+   font-weight:400;
+}
+
+#country-detail .country-detail-box .country-detail-desc-box .country-detail-desc .country-detail-desc-item span{
+    font-size: 17px;
+    font-weight:700;
+    margin-right: 5px;
+ }
+
+ #country-detail .country-detail-box .country-border-box{
+    font-size: 17px;
+    font-weight:700;
+    margin-top: 20px;
+ }
+
+ #country-detail .country-detail-box .country-border-box span{
+    font-size: 17px;
+    font-weight:700;
+    margin-top: 20px;
+    margin-right: 20px;
+ }
+
+ #country-detail .country-detail-box .country-border-box  .border-country-item{
+    font-size: 14px;
+    font-weight:400;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    padding:7px 10px;
+    margin-right: 10px;
+ }

@@ -1,15 +1,20 @@
 import React from 'react'
-import './App.css'
-import Header from './components/Header'
-import Countries from './components/Countries'
-
+import {Route,Routes} from "react-router-dom"
+import './assets/style/App.css'
+//Pages
+import Home from './pages/Home'
+import Detail from './pages/Detail'
+import Error from './pages/Error'
 
 function App() {
 
   return (
     <div className="app">
-        <Header/>
-        <Countries/>      
+            <Routes>
+                <Route path="/"  element={<Home/>}/>
+                <Route path="detail/:countryId" element={<Detail/>}/>
+                <Route path="*" element={<Error/>}/>
+            </Routes>
     </div>
   )
 }
