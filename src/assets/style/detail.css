@@ -72,7 +72,7 @@
    font-weight:400;
 }
 
-#country-detail .country-detail-box .country-detail-desc-box .country-detail-desc .country-detail-desc-item span{
+#country-detail .country-detail-box .country-detail-desc-box .country-detail-desc .country-detail-desc-item span:first-child{
     font-size: 17px;
     font-weight:700;
     margin-right: 5px;
@@ -95,6 +95,7 @@
     font-size: 14px;
     font-weight:400;
     border:1px solid #ccc;
+    margin-bottom: 10px;
     border-radius: 5px;
     display: inline-block;
     padding:7px 10px;

@@ -1,10 +1,11 @@
 import React,{useState,useEffect} from 'react'
+import axios from 'axios';
 import { useParams,useNavigate } from 'react-router-dom';
 import { MdArrowBack } from "react-icons/md";
 
 function CountryDetail() {
   const params=useParams();
-  const countryId=params?.countryId;
+  const countryName=params?.countryName;
   const navigate=useNavigate()
 
   const[countryDetail,setCountryDetail]=useState([])
@@ -14,15 +15,19 @@ function CountryDetail() {
   },[])
 
   async function getCountyDetail(){
-    const res= await fetch("https://restcountries.com/v3.1/all")
-    const json=await res.json()
-    const countryData=json[countryId]
+    try {
+      const res = await axios.get(`https://restcountries.com/v3.1/name/${countryName}`);
+      const countryData= res.data[0]
       console.log(countryData)
-    setCountryDetail(countryData)
+      setCountryDetail(countryData)
+    } catch (error) {
+      // setError(error.message);
+    }
   }
 
-  function backButton(){
-    
+
+
+  function backButton(){  
     navigate("/")
   }
   
@@ -68,19 +73,23 @@ function CountryDetail() {
                     <div className="right-desc">
                       
                     <div className="country-detail-desc-item">
-                      <span>Top Level Domain:</span>
-                      Azərbaycan Respublikası
-                      </div>
+    <span>Top Level Domain:</span>
+    {countryDetail?.tld?.join(', ')}
+  </div>
 
                       <div className="country-detail-desc-item">
-                      <span>Currencies:</span>
-                      {countryDetail?.currencies?.XAF?.name}
-                      </div>
+    <span>Currencies:</span>
+    {Object.values(countryDetail?.currencies || {}).map((currency, index) => (
+      <span key={index}>{currency.name}</span>
+    ))}
+  </div>
 
-                      <div className="country-detail-desc-item">
-                      <span>Languages:</span>
-                      {countryDetail?.languages?.ara}
-                      </div>
+  <div className="country-detail-desc-item">
+    <span>Languages:</span>
+    {Object.values(countryDetail?.languages || {}).map((language, index,languagesArray) => (
+      <span key={index}>{language}  {index < languagesArray.length - 1 ? ',' : ''}</span>
+    ))}
+  </div>
 
                     </div>
 
@@ -88,8 +97,8 @@ function CountryDetail() {
 
                 <div className="country-border-box">
                 <span>Border Countries:</span> 
-                {countryDetail?.borders?.map((item)=>{
-                  return (<div className="border-country-item">
+                {countryDetail?.borders?.map((item,index)=>{
+                  return (<div key={index} className="border-country-item">
                   {item}
                 </div>)
                 })}

@@ -1,15 +1,15 @@
 import React from 'react'
 
-function Filter() {
+function Filter({setFilter}) {
   return (
     <div className="filter-box">
-                <select name="" id="">
+                <select onChange={(e)=>{setFilter(e.target.value)}} name="" id="">
                   <option value="">Select</option>
-                  <option value="">Africa</option>
-                  <option value="">Americas</option>
-                  <option value="">Asia</option>
-                  <option value="">Europe</option>
-                  <option value="">Oceania</option>
+                  <option value="Africa">Africa</option>
+                  <option value="America">Americas</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Oceania">Oceania</option>
                 </select>
             </div>
   )

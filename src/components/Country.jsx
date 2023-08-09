@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 function Country({name,population,img,region,capital}) {
 
   return (
