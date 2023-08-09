@@ -33,6 +33,32 @@
   background-color: #eee;
 }
 
+@media only screen and (max-width: 1350px) {
+
+ #country-detail {
+   padding: 0px 30px;
+ }
+ 
+ }
+
+ @media only screen and (max-width: 900px) {
+
+  #country-detail .country-detail-box{
+    display: block !important;
+  }
+
+  #country-detail .country-detail-box .flag-img {
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  #country-detail .country-detail-box .country-detail-desc-box  {
+    width: 100% !important;
+    padding-left: 0px !important;
+  }
+  
+  }
+
 #country-detail.active .back:hover {
   background-color: #212e37;
 }
