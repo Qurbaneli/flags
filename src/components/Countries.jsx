@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { MainContext, useContext } from "../context/context";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 //Components
@@ -11,6 +12,7 @@ function Countries() {
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
+  const { darkMode } = useContext(MainContext);
 
   useEffect(() => {
     getCountries();
@@ -26,7 +28,7 @@ function Countries() {
   }
 
   return (
-    <div id="countries">
+    <div id="countries" className={`${darkMode ? "active" : ""}`}>
       <div className="row">
         <div className="container">
           <Search setSearch={setSearch} />
@@ -49,7 +51,7 @@ function Countries() {
           })
           .map((el, index) => {
             return (
-              <NavLink key={index} to={`/detail/${el.name['common']}`}>
+              <NavLink key={index} to={`/detail/${el.name["common"]}`}>
                 <Country
                   key={index}
                   name={el.name["common"]}

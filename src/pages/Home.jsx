@@ -1,14 +1,14 @@
-import React from 'react'
-import Header from '../components/Header'
-import Countries from '../components/Countries'
+import React, { useState } from "react";
+import Header from "../components/Header";
+import Countries from "../components/Countries";
 
 function Home() {
   return (
     <div>
-        <Header/>
-        <Countries/>  
+      <Header />
+      <Countries />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
