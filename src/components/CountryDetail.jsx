@@ -3,6 +3,7 @@ import axios from "axios";
 import { MainContext, useContext } from "../context/context";
 import { useParams, useNavigate } from "react-router-dom";
 import { MdArrowBack } from "react-icons/md";
+import { API_URL } from "../api";
 
 function CountryDetail() {
   const { darkMode } = useContext(MainContext);
@@ -19,8 +20,7 @@ function CountryDetail() {
 
   async function getCountyDetail() {
     try {
-      const res = await axios.get(
-        `https://restcountries.com/v3.1/name/${countryName}`
+      const res = await axios.get(`${API_URL}/name/${countryName}`
       );
       const countryData = res.data[0];
       console.log(countryData);

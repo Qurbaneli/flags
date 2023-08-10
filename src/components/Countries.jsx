@@ -6,6 +6,7 @@ import axios from "axios";
 import Country from "./Country";
 import Search from "./Search";
 import Filter from "./Filter";
+import { API_URL } from "../api";
 
 function Countries() {
   const [countries, setCountries] = useState([]);
@@ -20,7 +21,7 @@ function Countries() {
 
   async function getCountries() {
     try {
-      const res = await axios.get(`https://restcountries.com/v3.1/all`);
+      const res = await axios.get(`${API_URL}/all`);
       setCountries(res.data);
     } catch (error) {
       setError(error.message);

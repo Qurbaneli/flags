@@ -6,6 +6,8 @@ import "./assets/style/App.css";
 import Home from "./pages/Home";
 import Detail from "./pages/Detail";
 import Error from "./pages/Error";
+//Components
+import Header from "./components/Header"
 
 function App() {
   useEffect(() => {
@@ -25,6 +27,7 @@ function App() {
   return (
     <div className="app">
       <MainContext.Provider value={data}>
+        <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="detail/:countryName" element={<Detail />} />
